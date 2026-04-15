@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+__pycache__/
+*.pyc
+.venv/
+dist/
+.DS_Store
+logs/
+*.log
+benchmark_results/
+candidates/

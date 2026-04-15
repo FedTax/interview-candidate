@@ -1,0 +1,296 @@
+{
+  "categories": {
+    "clothing": {
+      "description": "Everyday clothing and footwear",
+      "rules": {
+        "NY": {
+          "taxable": "conditional",
+          "condition": "exempt if item price < 110.00; taxable if item price >= 110.00",
+          "threshold": 110.00,
+          "threshold_applies_to": "selling_price",
+          "notes": "Threshold is evaluated against the price the customer actually pays (after discounts). In certain NY counties, clothing under $110 is exempt from county tax but may still be subject to city tax — however for this project, treat the threshold as applying uniformly across all jurisdictions."
+        },
+        "CA": { "taxable": true },
+        "TX": {
+          "taxable": true,
+          "tax_holiday": {
+            "description": "Back-to-school sales tax holiday",
+            "start": "2026-08-07",
+            "end": "2026-08-09",
+            "exempt_below": 100.00,
+            "threshold_applies_to": "selling_price",
+            "notes": "Holiday threshold based on discounted selling price"
+          }
+        },
+        "PA": { "taxable": false, "notes": "Most everyday clothing is exempt" },
+        "HI": { "taxable": true }
+      }
+    },
+    "electronics": {
+      "description": "Consumer electronics, computers, accessories",
+      "rules": {
+        "NY": { "taxable": true },
+        "CA": { "taxable": true },
+        "TX": { "taxable": true },
+        "PA": { "taxable": true },
+        "HI": { "taxable": true }
+      }
+    },
+    "groceries": {
+      "description": "Unprepared food items for home consumption",
+      "rules": {
+        "NY": { "taxable": false },
+        "CA": { "taxable": false },
+        "TX": { "taxable": false },
+        "PA": { "taxable": false },
+        "HI": { "taxable": false }
+      }
+    },
+    "prepared_food": {
+      "description": "Ready-to-eat meals, hot food, restaurant food",
+      "rules": {
+        "NY": { "taxable": true },
+        "CA": { "taxable": true },
+        "TX": { "taxable": true },
+        "PA": { "taxable": true },
+        "HI": { "taxable": true }
+      }
+    },
+    "candy": {
+      "description": "Candy and confections",
+      "rules": {
+        "NY": { "taxable": true },
+        "CA": { "taxable": false, "notes": "Candy is considered food in CA" },
+        "TX": { "taxable": true },
+        "PA": { "taxable": true },
+        "HI": { "taxable": true }
+      }
+    },
+    "digital_goods": {
+      "description": "Downloaded software, digital media, e-books",
+      "rules": {
+        "NY": { "taxable": true },
+        "CA": { "taxable": false, "notes": "Digital goods generally not taxable in CA" },
+        "TX": { "taxable": true },
+        "PA": { "taxable": true },
+        "HI": { "taxable": true }
+      }
+    },
+    "software_saas": {
+      "description": "SaaS subscriptions, cloud software",
+      "rules": {
+        "NY": { "taxable": true },
+        "CA": { "taxable": false },
+        "TX": { "taxable": true },
+        "PA": { "taxable": true },
+        "HI": { "taxable": true }
+      }
+    },
+    "medical_supplies": {
+      "description": "Over-the-counter medicines, medical devices, first aid",
+      "rules": {
+        "NY": { "taxable": false },
+        "CA": { "taxable": false },
+        "TX": { "taxable": false },
+        "PA": { "taxable": false },
+        "HI": { "taxable": true, "notes": "HI taxes most items including medical supplies" }
+      }
+    },
+    "school_supplies": {
+      "description": "Notebooks, pens, pencils, binders, backpacks used for school",
+      "rules": {
+        "NY": { "taxable": true },
+        "CA": { "taxable": true },
+        "TX": {
+          "taxable": true,
+          "tax_holiday": {
+            "description": "Back-to-school sales tax holiday",
+            "start": "2026-08-07",
+            "end": "2026-08-09",
+            "exempt_below": 100.00,
+            "threshold_applies_to": "selling_price"
+          }
+        },
+        "PA": { "taxable": true },
+        "HI": { "taxable": true }
+      }
+    },
+    "shipping": {
+      "description": "Shipping and handling charges. This is a special category — items with this category represent the shipping line on the order. They follow the shipping_rules section, not normal taxability rules.",
+      "is_fee": true,
+      "excluded_from_discounts": true,
+      "rules": {
+        "NY": { "taxable": true },
+        "CA": { "taxable": "conditional" },
+        "TX": { "taxable": true },
+        "PA": { "taxable": true },
+        "HI": { "taxable": true }
+      }
+    },
+    "ewaste_fee": {
+      "description": "State-mandated electronic waste recycling fee",
+      "is_fee": true,
+      "is_excise": true,
+      "excluded_from_discounts": true,
+      "non_refundable": false,
+      "rules": {
+        "NY": { "taxable": false },
+        "CA": { "taxable": false },
+        "TX": { "taxable": false },
+        "PA": { "taxable": false },
+        "HI": { "taxable": false }
+      },
+      "notes": "eWaste fees are never subject to sales tax and never receive discounts. They CAN be refunded."
+    },
+    "tire_fee": {
+      "description": "State-mandated tire recycling/disposal fee",
+      "is_fee": true,
+      "is_excise": true,
+      "excluded_from_discounts": true,
+      "non_refundable": false,
+      "rules": {
+        "NY": { "taxable": false },
+        "CA": { "taxable": false },
+        "TX": { "taxable": false },
+        "PA": { "taxable": false },
+        "HI": { "taxable": false }
+      },
+      "notes": "Tire fees are never subject to sales tax and never receive discounts. They CAN be refunded."
+    },
+    "retail_delivery_fee": {
+      "description": "State-mandated retail delivery fee applied to shipped orders",
+      "is_fee": true,
+      "is_excise": true,
+      "excluded_from_discounts": true,
+      "non_refundable": true,
+      "rules": {
+        "NY": { "taxable": false },
+        "CA": { "taxable": false },
+        "TX": { "taxable": false },
+        "PA": { "taxable": false },
+        "HI": { "taxable": false }
+      },
+      "notes": "Retail delivery fees are never subject to sales tax, never receive discounts, and are NEVER refundable — even in full returns."
+    },
+    "core_charge": {
+      "description": "Refundable deposit for returning used parts (auto parts, batteries). Charged at purchase, refunded when old part returned.",
+      "is_fee": true,
+      "is_excise": true,
+      "excluded_from_discounts": true,
+      "non_refundable": false,
+      "rules": {
+        "NY": { "taxable": true },
+        "CA": { "taxable": true },
+        "TX": { "taxable": true },
+        "PA": { "taxable": true },
+        "HI": { "taxable": true }
+      },
+      "notes": "Core charges ARE subject to sales tax (unlike other fees) but NEVER receive discounts. They CAN be refunded."
+    },
+    "gratuity": {
+      "description": "Voluntary tips or mandatory gratuities",
+      "is_fee": true,
+      "is_excise": true,
+      "excluded_from_discounts": true,
+      "non_refundable": false,
+      "rules": {
+        "NY": { "taxable": false },
+        "CA": { "taxable": false },
+        "TX": { "taxable": false },
+        "PA": { "taxable": false },
+        "HI": { "taxable": false }
+      },
+      "notes": "Gratuities are not subject to sales tax and never receive discounts. They CAN be refunded."
+    }
+  },
+  "fee_handling": {
+    "description": "Fee-type items (is_fee=true) have special rules that differ from regular product categories",
+    "discount_exclusion": "Items with excluded_from_discounts=true must NEVER receive any portion of line-item or order-level discounts. Order-level discount allocation should skip these items entirely — they are excluded from both the allocation numerator and denominator.",
+    "excise_items": "Items with is_excise=true are government-mandated fees. They follow their own taxability rules (some are taxable like core_charge, most are not) but are excluded from discount calculations.",
+    "refund_rules": "Only items with non_refundable=true cannot be returned. All other fee items can be returned and refunded normally."
+  },
+  "shipping_rules": {
+    "NY": {
+      "taxable": true,
+      "notes": "Shipping and delivery charges are taxable"
+    },
+    "CA": {
+      "taxable": "conditional",
+      "condition": "Taxable only if the shipped items are taxable. If all items are exempt, shipping is exempt. If mixed, shipping tax is proportional to taxable items.",
+      "method": "proportional",
+      "notes": "Proportional calculation uses post-discount item values. Fee-type items are excluded from the proportional calculation (only regular product items count)."
+    },
+    "TX": {
+      "taxable": true,
+      "notes": "Shipping and delivery charges are taxable"
+    },
+    "PA": {
+      "taxable": true,
+      "notes": "Shipping and delivery charges are taxable"
+    },
+    "HI": {
+      "taxable": true,
+      "notes": "Shipping is ALWAYS taxable in Hawaii, even when shipped items are exempt"
+    }
+  },
+  "discount_rules": {
+    "line_discounts": {
+      "description": "Per-item discounts reduce the taxable amount of that specific item",
+      "application": "Subtract discount from (price * quantity) to get taxable amount. Discount cannot reduce taxable amount below zero.",
+      "affects_thresholds": true,
+      "excluded_items": "Line discounts CANNOT be applied to items with excluded_from_discounts=true. If a request includes a non-zero discount on such an item, return an error.",
+      "notes": "Discounts are applied BEFORE threshold evaluation (NY clothing, TX holiday)"
+    },
+    "order_discounts": {
+      "description": "Order-level discounts are allocated proportionally across eligible items only",
+      "allocation_method": "proportional",
+      "allocation_basis": "pre_discount_line_value",
+      "eligible_items": "Only items that are NOT excluded_from_discounts AND are NOT categorically exempt (e.g., groceries in a state where groceries are always exempt). Fee-type items and shipping are always excluded from allocation.",
+      "notes": "Allocate order discount to each eligible item as: item_share = order_discount * (item_line_value / total_eligible_value). Round allocated amounts to nearest cent per item. If rounding causes total allocated to differ from order_discount, adjust the largest eligible item's allocation."
+    }
+  },
+  "return_rules": {
+    "description": "Rules for calculating tax refunds on returned items",
+    "rate_source": "original",
+    "rate_source_notes": "Returns always use the tax rates from the ORIGINAL transaction, not current rates.",
+    "partial_returns": {
+      "description": "When only some items are returned, only those items' tax is refunded",
+      "shipping_refund": "proportional",
+      "shipping_refund_notes": "Shipping tax refund is proportional to value returned. Calculate proportion using the original order's item values (excluding fee-type items from both numerator and denominator)."
+    },
+    "non_refundable_categories": ["retail_delivery_fee"],
+    "non_refundable_notes": "Items in non-refundable categories cannot be returned. The API should reject return requests that include non-refundable items.",
+    "fee_refunds": "Fee-type items that are NOT non_refundable (ewaste_fee, tire_fee, core_charge, gratuity) CAN be returned. Their tax (if any) is refunded. They are excluded from shipping refund proportion calculation."
+  },
+  "marketplace_facilitator": {
+    "description": "When an order is placed through a marketplace (e.g., Amazon, eBay), the marketplace is responsible for collecting tax, not the seller.",
+    "flag": "is_marketplace_order",
+    "effect": "When is_marketplace_order=true, the marketplace has already collected and remitted tax. The API should return zero tax for the entire order regardless of nexus, exemptions, or any other rules. This overrides everything.",
+    "notes": "This is a simple flag check that should short-circuit all other logic. If the marketplace already collected tax, there is nothing for the seller to collect."
+  },
+  "exemption_certificates": {
+    "description": "Valid exemption certificates remove tax liability",
+    "rules": {
+      "resale": {
+        "description": "Buyer is purchasing for resale, not end use",
+        "effect": "All sales tax removed (state + local) on all items. Fee-type items follow their own rules (excise items are not affected by resale certificates — if they are taxable, they remain taxable).",
+        "applies_to": ["NY", "CA", "TX", "PA", "HI"]
+      },
+      "nonprofit": {
+        "description": "Buyer is a qualifying nonprofit organization",
+        "effect": "State tax removed on regular items; local taxes may still apply depending on state. Fee-type excise items are not affected.",
+        "state_rules": {
+          "NY": "state_and_local_exempt",
+          "CA": "state_and_local_exempt",
+          "TX": "state_and_local_exempt",
+          "PA": "state_and_local_exempt",
+          "HI": "state_exempt_local_taxable"
+        }
+      }
+    }
+  },
+  "rounding_rules": {
+    "method": "per_line_item",
+    "description": "Tax should be calculated and rounded per line item (quantity * price * rate), then summed. Round to nearest cent using standard rounding (0.005 rounds up)."
+  }
+}

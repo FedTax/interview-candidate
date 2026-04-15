@@ -1,0 +1,178 @@
+{
+  "jurisdictions": {
+    "NY": {
+      "state_rate": 0.04,
+      "sourcing": "destination",
+      "localities": {
+        "10001": {
+          "name": "New York City",
+          "county": "New York",
+          "city": "New York",
+          "county_rate": 0.045,
+          "city_rate": 0.0,
+          "district_rate": 0.00375,
+          "district_name": "MCTD"
+        },
+        "10701": {
+          "name": "Yonkers",
+          "county": "Westchester",
+          "city": "Yonkers",
+          "county_rate": 0.04,
+          "city_rate": 0.015,
+          "district_rate": 0.00375,
+          "district_name": "MCTD"
+        },
+        "12201": {
+          "name": "Albany",
+          "county": "Albany",
+          "city": "Albany",
+          "county_rate": 0.04,
+          "city_rate": 0.0,
+          "district_rate": 0.0,
+          "district_name": null
+        }
+      }
+    },
+    "CA": {
+      "state_rate": 0.0725,
+      "sourcing": "modified_origin",
+      "sourcing_notes": "For intrastate sales: state + county + city rates use ORIGIN address; district rate uses DESTINATION address. For interstate sales: all rates use DESTINATION address.",
+      "localities": {
+        "90001": {
+          "name": "Los Angeles",
+          "county": "Los Angeles",
+          "city": "Los Angeles",
+          "county_rate": 0.0025,
+          "city_rate": 0.0,
+          "district_rate": 0.025,
+          "district_name": "LA Metro"
+        },
+        "94102": {
+          "name": "San Francisco",
+          "county": "San Francisco",
+          "city": "San Francisco",
+          "county_rate": 0.0,
+          "city_rate": 0.0,
+          "district_rate": 0.01375,
+          "district_name": "BART/Transportation"
+        },
+        "92101": {
+          "name": "San Diego",
+          "county": "San Diego",
+          "city": "San Diego",
+          "county_rate": 0.0025,
+          "city_rate": 0.0,
+          "district_rate": 0.005,
+          "district_name": "TransNet"
+        }
+      }
+    },
+    "TX": {
+      "state_rate": 0.0625,
+      "sourcing": "origin",
+      "sourcing_notes": "For intrastate sales: use ORIGIN address for all rates. For interstate sales: use DESTINATION address for all rates.",
+      "localities": {
+        "77001": {
+          "name": "Houston",
+          "county": "Harris",
+          "city": "Houston",
+          "county_rate": 0.0,
+          "city_rate": 0.01,
+          "district_rate": 0.01,
+          "district_name": "MTA",
+          "local_tax_cap": 1600.00,
+          "local_tax_cap_notes": "City and district taxes only apply to the first $1,600 of each item's value"
+        },
+        "75201": {
+          "name": "Dallas",
+          "county": "Dallas",
+          "city": "Dallas",
+          "county_rate": 0.0,
+          "city_rate": 0.01,
+          "district_rate": 0.01,
+          "district_name": "DART",
+          "local_tax_cap": 1600.00,
+          "local_tax_cap_notes": "City and district taxes only apply to the first $1,600 of each item's value"
+        },
+        "78201": {
+          "name": "San Antonio",
+          "county": "Bexar",
+          "city": "San Antonio",
+          "county_rate": 0.0,
+          "city_rate": 0.01125,
+          "district_rate": 0.00875,
+          "district_name": "VIA/ATD",
+          "local_tax_cap": 1600.00,
+          "local_tax_cap_notes": "City and district taxes only apply to the first $1,600 of each item's value"
+        }
+      }
+    },
+    "PA": {
+      "state_rate": 0.06,
+      "sourcing": "destination",
+      "localities": {
+        "19101": {
+          "name": "Philadelphia",
+          "county": "Philadelphia",
+          "city": "Philadelphia",
+          "county_rate": 0.02,
+          "city_rate": 0.0,
+          "district_rate": 0.0,
+          "district_name": null
+        },
+        "15201": {
+          "name": "Pittsburgh",
+          "county": "Allegheny",
+          "city": "Pittsburgh",
+          "county_rate": 0.01,
+          "city_rate": 0.0,
+          "district_rate": 0.0,
+          "district_name": null
+        },
+        "17101": {
+          "name": "Harrisburg",
+          "county": "Dauphin",
+          "city": "Harrisburg",
+          "county_rate": 0.0,
+          "city_rate": 0.0,
+          "district_rate": 0.0,
+          "district_name": null
+        }
+      }
+    },
+    "HI": {
+      "state_rate": 0.04,
+      "tax_type": "general_excise_tax",
+      "sourcing": "destination",
+      "localities": {
+        "96801": {
+          "name": "Honolulu",
+          "county": "Honolulu",
+          "city": "Honolulu",
+          "county_rate": 0.005,
+          "city_rate": 0.0,
+          "district_rate": 0.0,
+          "district_name": null
+        },
+        "96732": {
+          "name": "Kahului",
+          "county": "Maui",
+          "city": "Kahului",
+          "county_rate": 0.005,
+          "city_rate": 0.0,
+          "district_rate": 0.0,
+          "district_name": null
+        },
+        "96720": {
+          "name": "Hilo",
+          "county": "Hawaii",
+          "city": "Hilo",
+          "county_rate": 0.005,
+          "city_rate": 0.0,
+          "district_rate": 0.0,
+          "district_name": null
+        }
+      }
+    }
+  }
+}
