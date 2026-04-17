@@ -1,4 +1,67 @@
-# Sales Tax Rate Engine - Technical Assessment
+# TaxCloud Technical Assessment — Sales Tax Rate Engine
+
+Welcome! Plan for about **4 hours** of focused work.
+
+Build a REST API that calculates sales tax for e-commerce transactions and
+processes tax refunds for returns. Full spec is below — but first, here's how
+to get set up.
+
+---
+
+## Getting Started
+
+### 1. Create your own copy of this project
+
+Click the green **Use this template** button at the top of this repo →
+**Create a new repository** → set it to **Private** → click **Create**.
+
+You now have your own private copy in your GitHub account. You'll work
+there and submit by pushing to it.
+
+### 2. Clone your copy and launch the dev environment
+
+Our Docker dev box has Claude Code, Python, Node, and Go pre-installed and
+pre-configured for you. From the directory where you cloned your new repo:
+
+```bash
+docker run -it \
+  -e ANTHROPIC_API_KEY="<your-api-key>" \
+  -v $(pwd):/workspace \
+  -p 8080:8080 \
+  ghcr.io/fedtax/interview-devbox:latest
+```
+
+Replace `<your-api-key>` with the key we sent in your onboarding email.
+Inside the container, just run `claude` — it's already wired up to use
+your key and route through our proxy.
+
+> **Prefer your own machine?** You can work locally instead. Install Claude
+> Code with `npm install -g @anthropic-ai/claude-code`, then set these env
+> vars before running `claude`:
+> ```bash
+> export ANTHROPIC_BASE_URL="https://interview-proxy.purplerock-e0f9c506.eastus2.azurecontainerapps.io"
+> export ANTHROPIC_API_KEY="<your-api-key>"
+> ```
+
+### 3. Build your solution
+
+Read this README thoroughly — especially the business rules section. The
+real complexity is in how the rules interact with each other. Implement
+the two endpoints in any language/framework you prefer.
+
+Use AI however you'd like — we care about *how* you use it, not whether
+you use it. You may of course also use any other tools, documentation, or
+references you'd normally use.
+
+### 4. Submit
+
+When you're done:
+
+1. Commit your code and `git push` to your own repo (normal push to `origin`).
+2. Reply to the onboarding email with your repo URL — we'll add ourselves
+   as a collaborator and take it from there.
+
+---
 
 ## Overview
 
@@ -8,7 +71,7 @@ The API receives order details — items (potentially shipping from different wa
 
 Sales tax in the US is complex. Rates vary by jurisdiction, product taxability varies by state, sellers only collect where they have nexus, some states have tax holidays, local jurisdictions cap tax on expensive items, discounts change what's actually taxable, some line items are government-mandated fees with their own special rules, and marketplace orders are handled differently from direct sales. Your implementation should handle these rules correctly using the provided data files.
 
-**Time limit**: ~4 hours from when you start. Focus on correctness over polish.
+Focus on correctness over polish. A well-reasoned partial solution beats a broken complete one.
 
 **You may use AI tools freely** — we care about your process and how you use them, not just the final result.
 
