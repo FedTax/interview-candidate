@@ -346,7 +346,7 @@ Return appropriate HTTP error codes for:
 ## Deliverables
 
 1. A working API server with both endpoints
-2. Your code pushed to the **private submission repo** you were given in your onboarding email (not to the public project repo you cloned from)
+2. Your code pushed to your own private copy of this repo (the one you created with "Use this template")
 3. A brief `NOTES.md` describing assumptions, decisions, and how you handled ambiguous cases
 
 **Language/framework**: Your choice. Tests hit your API over HTTP.
